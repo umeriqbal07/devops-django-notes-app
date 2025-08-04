@@ -19,7 +19,7 @@ This project showcases a complete DevOps pipeline:
 - app 
 - infra/terraform 
 - k8s 
-- docker 
+- docker/nginx
 - ci-cd 
 - monitoring 
 - docs
