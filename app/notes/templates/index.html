@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+</head>
+    <link rel="stylesheet" href="{% static 'notes/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>Notes App</h1>
+        <p>Organize your thoughts and tasks</p>
+    </div>
+    <div class="container">
+        <a class="add-note-btn" href="{% url 'add_note' %}">+ Add New Note</a>
+
+        <h2 style="margin-top:2rem;">All Notes</h2>
+        <div class="note-cards">
+            {% for note in notes %}
+            <div class="note-card">
+                <div class="note-card-header">
+                    <span class="note-title">{{ note.title }}</span>
+                    {% if note.created_at %}
+                    <span class="note-date">{{ note.created_at|date:'Y-m-d H:i' }}</span>
+                    {% endif %}
+                </div>
+                <div class="note-card-content">{{ note.content }}</div>
+                <form method="post" action="{% url 'delete_note' note.id %}" class="delete-note-form">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-note-btn">Delete</button>
+                </form>
+            </div>
+            {% empty %}
+            <div class="note-card note-card-empty">No notes yet.</div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+</html>
+</body>
+</html>

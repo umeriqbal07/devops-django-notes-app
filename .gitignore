@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+venv/
+env/
+
+# Django
+*.log
+db.sqlite3
+/static/
+/media/
+
+# VSCode
+.vscode/
+
+# Docker
+*.pid
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Migrations
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Other
+*.bak
+*.swp
+*.swo
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml
+
+# CI/CD
+*.yml
+*.yaml
+
+# Ignore secrets
+secrets.*
