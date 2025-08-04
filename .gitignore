@@ -46,9 +46,6 @@ htmlcov/
 .coverage
 coverage.xml
 
-# CI/CD
-*.yml
-*.yaml
 
 # Ignore secrets
 secrets.*

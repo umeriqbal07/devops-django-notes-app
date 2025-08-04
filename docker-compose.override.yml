@@ -1,0 +1,12 @@
+# version: '3.9'
+
+services:
+  web:
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./app:/app
+    environment:
+      - DEBUG=True
+      - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE}
+    depends_on:
+      - db
